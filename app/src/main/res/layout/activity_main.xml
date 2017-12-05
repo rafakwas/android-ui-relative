@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tree"
+        android:layout_above="@id/button"
+        />
 
     <View
         android:id="@+id/centerShim"
@@ -19,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/centerShim"
+        android:layout_above="@id/tl"
         android:text="Let's party" />
 
     <ToggleButton
@@ -27,8 +36,45 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/centerShim"
+        android:layout_above="@id/tl"
         />
 
-
-
+    <TableLayout android:layout_width="fill_parent" android:id="@+id/tl"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
+        android:stretchColumns="1"
+        android:shrinkColumns="0">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R"/>
+            <SeekBar
+                android:id="@+id/redBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="G"/>
+            <SeekBar
+                android:id="@+id/greenBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B"/>
+            <SeekBar
+                android:id="@+id/blueBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
 </RelativeLayout>
